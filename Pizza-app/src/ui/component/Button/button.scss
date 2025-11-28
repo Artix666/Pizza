@@ -10,15 +10,6 @@
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &--transparent {
-    &__orange {
-      border: 1px solid theme.$orange;
-    }
-    &__gray {
-      border: 1px solid theme.$gray;
-    }
-  }
-
   &--orange {
     background-color: theme.$orange;
     &:hover {
@@ -44,5 +35,17 @@
 
   &--white {
     background-color: theme.$white;
+  }
+  &--transparent {
+    background-color: transparent;
+    &__orange {
+      border: 1px solid theme.$orange;
+      &:hover {
+        background-color: theme.$orange;
+      }
+    }
+    &__gray {
+      border: 1px solid theme.$gray;
+    }
   }
 }

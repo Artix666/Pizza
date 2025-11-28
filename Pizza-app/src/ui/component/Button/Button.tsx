@@ -23,10 +23,7 @@ export const Button: FC<ButtonProps> = ({
 }): ReactElement => {
   return (
     <button
-      className={`button button--${type} button--${type}__${backgroundColor}  button--${backgroundColor} ${className}`}
-      style={{
-        backgroundColor: type === "transparent" ? "transparent" : "",
-      }}
+      className={`button button--${type} button--${backgroundColor} button--${type}__${backgroundColor} ${className}`}
       onClick={onClick}
     >
       {children}
