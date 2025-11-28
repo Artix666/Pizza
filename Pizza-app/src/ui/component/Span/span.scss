@@ -2,13 +2,18 @@
 .text {
   color: theme.$black;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  &--white {
+    color: theme.$white;
+  }
   &--light-black {
     color: theme.$light-black;
   }
   &--light-gray {
     color: theme.$light-gray;
   }
-  &--white {
-    color: theme.$white;
+  &--orange {
+    color: theme.$orange;
   }
 }

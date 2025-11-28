@@ -1,12 +1,17 @@
-import { type FC, type ReactElement, type ReactNode } from "react";
+import {
+  type FC,
+  type MouseEvent,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import "./button.scss";
 
 interface ButtonProps {
   type: "filled" | "transparent";
-  backgroundColor?: "orange" | "light-black" | "light-gray";
+  backgroundColor?: "orange" | "light-black" | "light-gray" | "white";
   children: ReactNode;
   className?: string;
-  onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -14,14 +19,15 @@ export const Button: FC<ButtonProps> = ({
   backgroundColor,
   children,
   className,
+  onClick,
 }): ReactElement => {
   return (
     <button
-      className={`button button--${backgroundColor} ${className}`}
+      className={`button button--${type} button--${type}__${backgroundColor}  button--${backgroundColor} ${className}`}
       style={{
         backgroundColor: type === "transparent" ? "transparent" : "",
-        border: type === "transparent" ? `1px solid ${backgroundColor}` : "",
       }}
+      onClick={onClick}
     >
       {children}
     </button>

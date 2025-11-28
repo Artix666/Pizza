@@ -1,4 +1,5 @@
 @use "../../theme/theme.scss";
+
 .button {
   display: flex;
   align-items: center;
@@ -7,13 +8,41 @@
   border: none;
   width: 100%;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--transparent {
+    &__orange {
+      border: 1px solid theme.$orange;
+    }
+    &__gray {
+      border: 1px solid theme.$gray;
+    }
+  }
+
   &--orange {
     background-color: theme.$orange;
+    &:hover {
+      background-color: rgba($color: theme.$orange, $alpha: 0.5);
+    }
   }
+
   &--black {
     background-color: theme.$black;
   }
+
+  &--light-black {
+    background-color: theme.$light-black;
+  }
+
   &--light-gray {
     background-color: theme.$light-gray;
+    border: 1px solid theme.$gray;
+    &:hover {
+      background-color: rgba($color: theme.$light-black, $alpha: 0.2);
+    }
+  }
+
+  &--white {
+    background-color: theme.$white;
   }
 }

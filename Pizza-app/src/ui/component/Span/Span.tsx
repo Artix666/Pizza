@@ -2,7 +2,7 @@ import type { FC, ReactElement, ReactNode } from "react";
 import "./span.scss";
 
 interface SpanProps {
-  color?: "white" | "light-black" | "light-gray";
+  color?: "white" | "light-black" | "light-gray" | 'orange';
   children: ReactNode;
   className?: string;
 }
