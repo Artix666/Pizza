@@ -1,0 +1,19 @@
+@use "../../theme/theme.scss";
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  &--orange {
+    background-color: theme.$orange;
+  }
+  &--black {
+    background-color: theme.$black;
+  }
+  &--light-gray {
+    background-color: theme.$light-gray;
+  }
+}

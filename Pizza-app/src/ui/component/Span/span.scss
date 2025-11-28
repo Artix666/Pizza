@@ -1,0 +1,14 @@
+@use "../../theme/theme.scss";
+.text {
+  color: theme.$black;
+  display: flex;
+  &--light-black {
+    color: theme.$light-black;
+  }
+  &--light-gray {
+    color: theme.$light-gray;
+  }
+  &--white {
+    color: theme.$white;
+  }
+}

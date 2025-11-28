@@ -1,0 +1,9 @@
+@use "./theme.scss";
+body {
+  --orange: #{theme.$orange};
+  --white: #{theme.$white};
+  --black: #{theme.$black};
+  --light-black: #{theme.$light-black};
+  --gray: #{theme.$light-gray};
+  --light-gray: #{theme.$light-gray};
+}

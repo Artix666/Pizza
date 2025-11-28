@@ -1,0 +1,15 @@
+.categories {
+  &List {
+    display: flex;
+    gap: 9px;
+  }
+  &Btn {
+    min-height: 46px;
+    min-width: 82px;
+  }
+  &BtnText {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+}

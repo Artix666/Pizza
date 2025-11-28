@@ -1,7 +1,12 @@
-import "./App.css";
+import { Header } from "./ui/component/Header";
+import "./app.css";
+import { Categories } from "./ui/component/Categories";
 
-function App() {
-  return <>start</>;
+export function App() {
+  return (
+    <div className="container">
+      <Header />
+      <Categories />
+    </div>
+  );
 }
-
-export default App;
