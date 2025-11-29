@@ -25,8 +25,10 @@ export const Header: FC = (): ReactElement => {
               type="filled"
               backgroundColor="orange"
             >
-              <Span className={clsx(styles.headerBtnText)} color="white">520 ₽</Span>
-              <Span  className={clsx(styles.headerBtnText)} color="white">
+              <Span className={clsx(styles.headerBtnText)} color="white">
+                520 ₽
+              </Span>
+              <Span className={clsx(styles.headerBtnText)} color="white">
                 <BasketIcon />3
               </Span>
             </Button>

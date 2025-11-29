@@ -14,7 +14,7 @@ export const PizzaCard: FC<PizzaCardProps> = ({
   title,
   price,
 }): ReactElement => {
-  const [countAddedPizza, setCountAddedPizza] = useState(0);
+  const [countAddedPizza, setCountAddedPizza] = useState<number>(0);
   return (
     <div className={clsx(styles.pizzaCard)}>
       <img
