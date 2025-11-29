@@ -1,2 +1,4 @@
 import { BasketIcon } from "./Basket";
-export { BasketIcon };
+import { ArrowIcon } from "./Arrow";
+
+export { BasketIcon, ArrowIcon };

@@ -6,13 +6,8 @@
 
 
 body {
-  background-image: url(/images/background.jpg);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-
+  background: linear-gradient(90deg, rgba(155, 104, 42, 1) 0%, rgba(230, 143, 37, 1) 50%, rgba(255, 150, 89, 1) 100%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1,

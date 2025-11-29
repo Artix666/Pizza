@@ -1,5 +1,5 @@
-import { getCSSVar } from "../theme";
-import type { IconProps } from "./type";
+import { getCSSVar } from "../../theme";
+import type { IconProps } from "../type";
 
 export const BasketIcon = (props: IconProps) => {
   return (

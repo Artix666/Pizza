@@ -1,0 +1,54 @@
+@use "../../theme/theme.scss";
+.sort {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  &ArrowIcon {
+    margin-right: 5px;
+  }
+  &Selector {
+    border-bottom: 1px solid theme.$orange;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &SelectorValue {
+    color: theme.$orange;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  &ValuesBlock {
+    opacity: 0;
+    width: 150px;
+    min-height: 136px;
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    background-color: theme.$white;
+    padding: 13px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    z-index: -1;
+  }
+  &ValuesBlockActive {
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  &ValuesBlockValue {
+    justify-content: start;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: rgba($color: theme.$orange, $alpha: 0.2);
+    }
+  }
+  &ValuesBlockValueSelected {
+    color: theme.$orange;
+    font-weight: 600;
+    background-color: rgba($color: theme.$orange, $alpha: 0.2);
+  }
+}

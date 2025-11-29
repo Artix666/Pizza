@@ -7,15 +7,15 @@ import {
 import "./button.scss";
 
 interface ButtonProps {
-  type: "filled" | "transparent";
-  backgroundColor?: "orange" | "light-black" | "light-gray" | "white";
+  variant: "filled" | "transparent";
+  backgroundColor?: "orange" | "light-black" | "light-gray" | "white" | "";
   children: ReactNode;
   className?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: FC<ButtonProps> = ({
-  type,
+  variant,
   backgroundColor,
   children,
   className,
@@ -23,7 +23,7 @@ export const Button: FC<ButtonProps> = ({
 }): ReactElement => {
   return (
     <button
-      className={`button button--${type} button--${backgroundColor} button--${type}__${backgroundColor} ${className}`}
+      className={`button button--${variant} button--${backgroundColor} button--${variant}__${backgroundColor} ${className}`}
       onClick={onClick}
     >
       {children}

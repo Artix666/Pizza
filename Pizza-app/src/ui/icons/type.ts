@@ -9,4 +9,5 @@ export type IconProps = {
   height?: number;
   textColor?: string;
   style?: CSSProperties;
+  direction?: string;
 };

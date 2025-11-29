@@ -22,7 +22,7 @@ export const Header: FC = (): ReactElement => {
           <div className={clsx(styles.headerBtnWrap)}>
             <Button
               className={clsx(styles.headerBtn)}
-              type="filled"
+              variant="filled"
               backgroundColor="orange"
             >
               <Span className={clsx(styles.headerBtnText)} color="white">

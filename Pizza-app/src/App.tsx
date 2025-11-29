@@ -7,7 +7,8 @@ export function App() {
   return (
     <div className="layout">
       <Header />
-      <Categories />
+        <Categories />
+        
       <PizzaList />
     </div>
   );

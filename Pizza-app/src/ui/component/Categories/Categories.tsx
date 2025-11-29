@@ -4,13 +4,10 @@ import { Span } from "../Span";
 import styles from "./categories.module.scss";
 import { useState, type FC, type ReactElement } from "react";
 import { Container } from "../Container/Container";
+import { Sort } from "../Sort";
 
 export const Categories: FC = (): ReactElement => {
   const [activeCategory, setActiveCategory] = useState<number>(0);
-
-  const handleCategoryClick = (id: number): void => {
-    setActiveCategory(id);
-  };
 
   return (
     <nav className={clsx(styles.categories)}>
@@ -27,11 +24,11 @@ export const Categories: FC = (): ReactElement => {
             <li key={i}>
               <Button
                 className={clsx(styles.categoriesBtn)}
-                type="filled"
+                variant="filled"
                 backgroundColor={
                   activeCategory === i ? "light-black" : "light-gray"
                 }
-                onClick={() => handleCategoryClick(i)}
+                onClick={() => setActiveCategory(i)}
               >
                 <Span
                   className={clsx(styles.categoriesBtnText)}
@@ -43,6 +40,7 @@ export const Categories: FC = (): ReactElement => {
             </li>
           ))}
         </ul>
+        <Sort />
       </Container>
     </nav>
   );

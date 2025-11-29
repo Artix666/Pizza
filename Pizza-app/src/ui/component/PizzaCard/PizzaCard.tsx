@@ -3,60 +3,63 @@ import styles from "./pizza-card.module.scss";
 import clsx from "clsx";
 import { Span } from "../Span";
 import { Button } from "../Button";
+import type { Pizza } from "../PizzaList";
 
-interface PizzaCardProps {
-  id: number;
-  title: string;
-  price: number;
-}
+type PizzaCardProps = Pizza;
 
 export const PizzaCard: FC<PizzaCardProps> = ({
   title,
+  imgUrl,
   price,
+  types,
+  sizes,
 }): ReactElement => {
   const [countAddedPizza, setCountAddedPizza] = useState<number>(0);
+  const [activeType, setActiveType] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState<number>(0);
   return (
     <div className={clsx(styles.pizzaCard)}>
-      <img
-        className={clsx(styles.pizzaCardImage)}
-        src="/images/pizza.png"
-        alt="Пицца"
-      />
+      <img className={clsx(styles.pizzaCardImage)} src={imgUrl} alt="Пицца" />
       <Span className={clsx(styles.pizzaCardTitle)}>{title}</Span>
       <div className={clsx(styles.pizzaCardBtnWrap)}>
         <div className={clsx(styles.pizzaCardBtnSelectors)}>
-          <Button
-            className={clsx(styles.pizzaCardBtn)}
-            type="filled"
-            backgroundColor="white"
-          >
-            <Span className={clsx(styles.pizzaCardBtnText)}>тонкое</Span>
-          </Button>
-          <Button className={clsx(styles.pizzaCardBtn)} type="transparent">
-            <Span className={clsx(styles.pizzaCardBtnText)}>традиционное</Span>
-          </Button>
+          {types.map((type, i) => (
+            <Button
+              key={i}
+              className={clsx(
+                styles.pizzaCardBtn,
+                i === activeType && styles.pizzaCardBtnActive
+              )}
+              variant={i === activeType ? "filled" : "transparent"}
+              backgroundColor="white"
+              onClick={() => setActiveType(i)}
+            >
+              <Span className={clsx(styles.pizzaCardBtnText)}>{type}</Span>
+            </Button>
+          ))}
         </div>
         <div className={clsx(styles.pizzaCardBtnSelectors)}>
-          <Button
-            className={clsx(styles.pizzaCardBtn)}
-            type="filled"
-            backgroundColor="white"
-          >
-            <Span className={clsx(styles.pizzaCardBtnText)}>26 см.</Span>
-          </Button>
-          <Button className={clsx(styles.pizzaCardBtn)} type="transparent">
-            <Span className={clsx(styles.pizzaCardBtnText)}>30 см.</Span>
-          </Button>
-          <Button className={clsx(styles.pizzaCardBtn)} type="transparent">
-            <Span className={clsx(styles.pizzaCardBtnText)}>40 см.</Span>
-          </Button>
+          {sizes.map((size, i) => (
+            <Button
+              key={i}
+              className={clsx(
+                styles.pizzaCardBtn,
+                i === activeSize && styles.pizzaCardBtnActive
+              )}
+              variant={i === activeSize ? "filled" : "transparent"}
+              backgroundColor="white"
+              onClick={() => setActiveSize(i)}
+            >
+              <Span className={clsx(styles.pizzaCardBtnText)}>{size}</Span>
+            </Button>
+          ))}
         </div>
       </div>
       <div className={clsx(styles.pizzaCardPriceWrap)}>
         <Span className={clsx(styles.pizzaCardPrice)}>от {price} ₽</Span>
         <Button
           className={clsx(styles.pizzaCardAddBtn)}
-          type="transparent"
+          variant="transparent"
           backgroundColor="orange"
           onClick={() => setCountAddedPizza(countAddedPizza + 1)}
         >

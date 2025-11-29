@@ -1,62 +1,44 @@
 import clsx from "clsx";
-import { PizzaCard } from "../PizzaCard";
+import { PizzaCard, PizzaCardSkeleton } from "../PizzaCard";
 import styles from "./pizzas-list.module.scss";
 import { Container } from "../Container/Container";
+import { useEffect, useState } from "react";
 
-const pizzas = [
-  {
-    id: 1,
-    title: "Чизбургер-пицца",
-    price: 395,
-  },
-  {
-    id: 2,
-    title: "Сырная",
-    price: 450,
-  },
-  {
-    id: 3,
-    title: "Креветки по-азиатски",
-    price: 290,
-  },
-  {
-    id: 4,
-    title: "Сырный цыпленок",
-    price: 385,
-  },
-  {
-    id: 5,
-    title: "Чизбургер-пицца",
-    price: 395,
-  },
-  {
-    id: 6,
-    title: "Сырная",
-    price: 450,
-  },
-  {
-    id: 7,
-    title: "Креветки по-азиатски",
-    price: 290,
-  },
-  {
-    id: 8,
-    title: "Сырный цыпленок",
-    price: 385,
-  },
-];
+export interface Pizza {
+  id: number;
+  title: string;
+  imgUrl: string;
+  price: number;
+  types: string[];
+  sizes: string[];
+}
 
 export const PizzaList = () => {
+  const [items, setItems] = useState<Pizza[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    fetch("https://692ae25c7615a15ff24dfd05.mockapi.io/items")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json as Pizza[]);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <section className={clsx(styles.pizzas)}>
       <Container>
         <h1 className={clsx(styles.pizzasTitle)}>Все пиццы</h1>
         <ul className={clsx(styles.pizzasList)}>
-          {pizzas.map((pizza) => (
-            <ul key={pizza.id}>
-              <PizzaCard {...pizza} />
-            </ul>
-          ))}
+          {isLoading
+            ? [...new Array(8)].map((_, i) => <PizzaCardSkeleton key={i} />)
+            : items.map((item) => (
+                <li key={item.id}>
+                  <PizzaCard {...item} />
+                </li>
+              ))}
         </ul>
       </Container>
     </section>
