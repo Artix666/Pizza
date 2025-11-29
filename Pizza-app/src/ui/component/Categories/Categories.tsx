@@ -17,29 +17,27 @@ export const Categories: FC = (): ReactElement => {
       <Container className={clsx(styles.categoriesContainer)}>
         <ul className={clsx(styles.categoriesList)}>
           {[
-            { id: 1, title: "Все" },
-            { id: 2, title: "Мясные" },
-            { id: 3, title: "Вегетарианская" },
-            { id: 4, title: "Гриль" },
-            { id: 5, title: "Острые" },
-            { id: 6, title: "Закрытые" },
-          ].map((category) => (
-            <li key={category.id}>
+            "Все",
+            "Мясные",
+            "Вегетарианская",
+            "Гриль",
+            "Острые",
+            "Закрытые",
+          ].map((category, i) => (
+            <li key={i}>
               <Button
                 className={clsx(styles.categoriesBtn)}
                 type="filled"
                 backgroundColor={
-                  activeCategory === category.id ? "light-black" : "light-gray"
+                  activeCategory === i ? "light-black" : "light-gray"
                 }
-                onClick={() => handleCategoryClick(category.id)}
+                onClick={() => handleCategoryClick(i)}
               >
                 <Span
                   className={clsx(styles.categoriesBtnText)}
-                  color={
-                    activeCategory === category.id ? "white" : "light-black"
-                  }
+                  color={activeCategory === i ? "white" : "light-black"}
                 >
-                  {category.title}
+                  {category}
                 </Span>
               </Button>
             </li>
