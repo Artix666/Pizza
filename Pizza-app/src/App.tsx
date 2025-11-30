@@ -1,15 +1,18 @@
 import { Header } from "./ui/component/Header";
-import "./app.scss";
-import { Categories } from "./ui/component/Categories";
-import { PizzaList } from "./ui/component/PizzaList";
+import { Home } from "./pages/Home";
+import { Basket } from "./pages/Basket";
+import { NotFound } from "./pages/NotFound";
+import { Route, Routes } from "react-router";
 
 export function App() {
   return (
     <div className="layout">
       <Header />
-        <Categories />
-        
-      <PizzaList />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

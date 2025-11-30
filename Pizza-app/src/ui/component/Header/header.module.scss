@@ -10,11 +10,20 @@
   }
   &Logo {
     display: flex;
+    @media (max-width: 768px) {
+      max-width: 250px;
+    }
+    @media (max-width: 400px) {
+      max-width: 220px;
+    }
   }
   &BtnWrap {
     display: flex;
     max-width: 150px;
     width: 100%;
+    @media (max-width: 576px) {
+      display: none;
+    }
   }
   &Btn {
     min-height: 50px;
@@ -37,6 +46,29 @@
         width: 1px;
         background-color: theme.$gray;
         opacity: 0.5;
+      }
+    }
+  }
+  &BasketLink {
+    display: flex;
+    max-width: 150px;
+    width: 100%;
+    @media (max-width: 576px) {
+      max-width: 50px;
+    }
+    @media (max-width: 400px) {
+      max-width: 30px;
+    }
+  }
+  &BasketLinkAdaptive {
+    display: none;
+    @media (max-width: 576px) {
+      display: flex;
+    }
+    svg {
+      @media (max-width: 400px) {
+        width: 20px;
+        height: 20px;
       }
     }
   }

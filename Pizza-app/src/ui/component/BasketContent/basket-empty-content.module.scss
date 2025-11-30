@@ -1,0 +1,24 @@
+@use "../../theme/theme.scss";
+.basketEmptyContent {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &Title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 0.01em;
+  }
+  &Desc {
+    margin-bottom: 47px;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 145%;
+    letter-spacing: 0.01em;
+    color: theme.$dark-gray;
+    text-align: center;
+  }
+}

@@ -12,7 +12,8 @@ export const Categories: FC = (): ReactElement => {
   return (
     <nav className={clsx(styles.categories)}>
       <Container className={clsx(styles.categoriesContainer)}>
-        <ul className={clsx(styles.categoriesList)}>
+        <div className={clsx(styles.categoriesListWrap)}>
+          <ul className={clsx(styles.categoriesList)}>
           {[
             "Все",
             "Мясные",
@@ -40,6 +41,7 @@ export const Categories: FC = (): ReactElement => {
             </li>
           ))}
         </ul>
+        </div>
         <Sort />
       </Container>
     </nav>

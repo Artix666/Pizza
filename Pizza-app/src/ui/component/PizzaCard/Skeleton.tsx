@@ -3,9 +3,8 @@ import ContentLoader from "react-content-loader";
 
 export const PizzaCardSkeleton: FC = (): ReactElement => (
   <ContentLoader
+    className="skeleton"
     speed={2}
-    width={253}
-    height={441}
     viewBox="0 0 253 441"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"

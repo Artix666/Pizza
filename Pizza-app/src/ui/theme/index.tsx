@@ -6,7 +6,8 @@ export type ThemeColor =
   | "black"
   | "light-black"
   | "gray"
-  | "light-gray";
+  | "light-gray"
+  | "dark-gray";
 
 export const colorCSSVars: { [k in ThemeColor]: string } = {
   orange: "var(--orange)",
@@ -15,6 +16,7 @@ export const colorCSSVars: { [k in ThemeColor]: string } = {
   "light-black": "var(--light-black)",
   gray: "var(--gray)",
   "light-gray": "var(--light-gray)",
+  "dark-gray": "var(--dark-gray)",
 };
 
 export const getCSSVar = (color?: ThemeColor) =>
