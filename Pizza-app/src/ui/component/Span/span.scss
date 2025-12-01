@@ -4,16 +4,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &--black {
+    color: theme.$black;
+  }
   &--white {
     color: theme.$white;
   }
   &--light-black {
     color: theme.$light-black;
   }
+  &--gray {
+    color: theme.$gray;
+
+  }
   &--light-gray {
     color: theme.$light-gray;
   }
   &--orange {
     color: theme.$orange;
+  }
+  &--dark-gray {
+    color: theme.$dark-gray;
+  }
+  &--snow-white {
+    color: theme.$snow-white;
   }
 }

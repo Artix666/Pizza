@@ -1,5 +1,8 @@
 import clsx from "clsx";
 import styles from "./basket-empty-content.module.scss";
+import { Button } from "../Button";
+import { Span } from "../Span";
+import { Link } from "react-router";
 
 export const BasketEmptyContent = () => {
   return (
@@ -18,6 +21,21 @@ export const BasketEmptyContent = () => {
         width={300}
         height={255}
       />
+      <Link  to="/" className={clsx(styles.basketEmptyContentLink)}>
+
+        <Button
+          className={clsx(styles.basketEmptyContentBtn)}
+          variant="filled"
+          backgroundColor="light-black"
+        >
+          <Span
+            className={clsx(styles.basketEmptyContentBtnText)}
+            color="white"
+          >
+            Вернуться назад
+          </Span>
+        </Button>
+      </Link>
     </div>
   );
 };

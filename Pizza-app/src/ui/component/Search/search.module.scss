@@ -1,0 +1,42 @@
+@use "../../theme/theme.scss";
+.search {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  &Icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+  }
+  &Field {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 40px;
+    outline: none;
+    border: none;
+    border: 1px solid theme.$gray;
+    border-radius: 10px;
+    color: theme.$light-black;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &IconClear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:hover {
+      circle {
+        stroke: theme.$orange;
+        transition: all .3s ease;
+      }
+      path {
+        fill: theme.$orange;
+        transition: all .3s ease;
+      }
+    }
+  }
+}

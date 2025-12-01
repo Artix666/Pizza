@@ -4,31 +4,38 @@ import type { IconProps } from "../type";
 export const BasketIcon = (props: IconProps) => {
   return (
     <svg
-      width="17"
-      height="17"
-      viewBox="0 0 17 17"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
-        d="M5.56667 15.5667C6.30305 15.5667 6.9 14.9697 6.9 14.2333C6.9 13.4969 6.30305 12.9 5.56667 12.9C4.83029 12.9 4.23334 13.4969 4.23334 14.2333C4.23334 14.9697 4.83029 15.5667 5.56667 15.5667Z"
-        stroke={getCSSVar(props.color ?? "white")}
-        strokeWidth="1.8"
+        d="M2.5 5H4.16667H17.5"
+        stroke={getCSSVar(props.color ?? "dark-gray")}
+        strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M13.5667 15.5667C14.3031 15.5667 14.9 14.9697 14.9 14.2333C14.9 13.4969 14.3031 12.9 13.5667 12.9C12.8303 12.9 12.2333 13.4969 12.2333 14.2333C12.2333 14.9697 12.8303 15.5667 13.5667 15.5667Z"
-        stroke={getCSSVar(props.color ?? "white")}
-        strokeWidth="1.8"
+        d="M6.66663 5.00001V3.33334C6.66663 2.89131 6.84222 2.46739 7.15478 2.15483C7.46734 1.84227 7.89127 1.66667 8.33329 1.66667H11.6666C12.1087 1.66667 12.5326 1.84227 12.8451 2.15483C13.1577 2.46739 13.3333 2.89131 13.3333 3.33334V5.00001M15.8333 5.00001V16.6667C15.8333 17.1087 15.6577 17.5326 15.3451 17.8452C15.0326 18.1577 14.6087 18.3333 14.1666 18.3333H5.83329C5.39127 18.3333 4.96734 18.1577 4.65478 17.8452C4.34222 17.5326 4.16663 17.1087 4.16663 16.6667V5.00001H15.8333Z"
+        stroke={getCSSVar(props.color ?? "gray")}
+        strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M4.01336 4.23333H15.5667L14.4467 9.82666C14.3857 10.1336 14.2188 10.4093 13.975 10.6055C13.7312 10.8018 13.4262 10.906 13.1134 10.9H6.06669C5.74115 10.9028 5.42584 10.7863 5.18023 10.5726C4.93462 10.3589 4.77567 10.0628 4.73336 9.73999L3.72002 2.05999C3.678 1.73948 3.52097 1.44516 3.27816 1.23177C3.03534 1.01839 2.72328 0.900483 2.40002 0.899994H0.900024"
-        stroke={getCSSVar(props.color ?? "white")}
-        strokeWidth="1.8"
+        d="M8.33337 9.16667V14.1667"
+        stroke={getCSSVar(props.color ?? "gray")}
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.6666 9.16667V14.1667"
+        stroke={getCSSVar(props.color ?? "gray")}
+        strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

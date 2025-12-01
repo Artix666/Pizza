@@ -8,9 +8,16 @@ import "./button.scss";
 
 interface ButtonProps {
   variant: "filled" | "transparent";
-  backgroundColor?: "orange" | "light-black" | "light-gray" | "white" | "";
+  backgroundColor?:
+    | "orange"
+    | "light-black"
+    | "light-gray"
+    | "white"
+    | "snow-white";
   children: ReactNode;
   className?: string;
+  bordered?: boolean;
+  borderColor?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -19,11 +26,16 @@ export const Button: FC<ButtonProps> = ({
   backgroundColor,
   children,
   className,
+  bordered,
+  borderColor,
   onClick,
 }): ReactElement => {
+  const defaultBackgroundColor = backgroundColor || "white";
   return (
     <button
-      className={`button button--${variant} button--${backgroundColor} button--${variant}__${backgroundColor} ${className}`}
+      className={`button button--${variant} button--${defaultBackgroundColor} ${
+        bordered && "button--bordered"
+      } button--bordered__${borderColor} ${className}`}
       onClick={onClick}
     >
       {children}

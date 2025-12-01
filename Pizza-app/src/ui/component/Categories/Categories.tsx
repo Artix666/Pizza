@@ -2,47 +2,63 @@ import clsx from "clsx";
 import { Button } from "../Button";
 import { Span } from "../Span";
 import styles from "./categories.module.scss";
-import { useState, type FC, type ReactElement } from "react";
+import {
+  type Dispatch,
+  type FC,
+  type ReactElement,
+  type SetStateAction,
+} from "react";
 import { Container } from "../Container/Container";
 import { Sort } from "../Sort";
+import type { SortTypeSchema } from "../../../pages/Home";
 
-export const Categories: FC = (): ReactElement => {
-  const [activeCategory, setActiveCategory] = useState<number>(0);
+interface CategoriesProps {
+  categoryId: number;
+  setCategoryId: Dispatch<SetStateAction<number>>;
+  sortType: SortTypeSchema;
+  setSortType: Dispatch<SetStateAction<SortTypeSchema>>;
+}
 
+export const Categories: FC<CategoriesProps> = ({
+  categoryId,
+  setCategoryId,
+  sortType,
+  setSortType,
+}): ReactElement => {
   return (
     <nav className={clsx(styles.categories)}>
       <Container className={clsx(styles.categoriesContainer)}>
         <div className={clsx(styles.categoriesListWrap)}>
           <ul className={clsx(styles.categoriesList)}>
-          {[
-            "Все",
-            "Мясные",
-            "Вегетарианская",
-            "Гриль",
-            "Острые",
-            "Закрытые",
-          ].map((category, i) => (
-            <li key={i}>
-              <Button
-                className={clsx(styles.categoriesBtn)}
-                variant="filled"
-                backgroundColor={
-                  activeCategory === i ? "light-black" : "light-gray"
-                }
-                onClick={() => setActiveCategory(i)}
-              >
-                <Span
-                  className={clsx(styles.categoriesBtnText)}
-                  color={activeCategory === i ? "white" : "light-black"}
+            {[
+              "Все",
+              "Мясные",
+              "Вегетарианская",
+              "Гриль",
+              "Острые",
+              "Закрытые",
+            ].map((category, i) => (
+              <li key={i}>
+                <Button
+                  className={clsx(styles.categoriesBtn)}
+                  variant="filled"
+                  backgroundColor={
+                    categoryId === i ? "light-black" : "snow-white"
+                  }
+                  onClick={() => setCategoryId(i)}
                 >
-                  {category}
-                </Span>
-              </Button>
-            </li>
-          ))}
-        </ul>
+                  <Span
+                    className={clsx(styles.categoriesBtnText)}
+                    color={categoryId === i ? "snow-white" : "light-black"}
+                  >
+                    {category}
+                  </Span>
+                </Button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <Sort />
+        <Sort sortType={sortType} setSortType={setSortType} />
       </Container>
     </nav>
   );

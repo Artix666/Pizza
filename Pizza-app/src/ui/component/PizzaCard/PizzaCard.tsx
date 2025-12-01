@@ -60,11 +60,18 @@ export const PizzaCard: FC<PizzaCardProps> = ({
         <Button
           className={clsx(styles.pizzaCardAddBtn)}
           variant="transparent"
-          backgroundColor="orange"
+          bordered={true}
+          borderColor="orange"
           onClick={() => setCountAddedPizza(countAddedPizza + 1)}
         >
           <Span className={clsx(styles.pizzaCardAddBtnText)} color="orange">
             + Добавить
+          </Span>
+          <Span
+            className={clsx(styles.pizzaCardAddBtnTextAdaptive)}
+            color="orange"
+          >
+            Добавить
           </Span>
           {countAddedPizza !== 0 && (
             <div className={clsx(styles.pizzaCardCountWrap)}>

@@ -2,14 +2,28 @@ import clsx from "clsx";
 import { Span } from "../Span";
 import styles from "./sort.module.scss";
 import { ArrowIcon } from "../../icons";
-import { useState, type FC, type ReactElement } from "react";
+import {
+  useState,
+  type Dispatch,
+  type FC,
+  type ReactElement,
+  type SetStateAction,
+} from "react";
+import type { SortTypeSchema } from "../../../pages/Home";
 
-export const Sort: FC = (): ReactElement => {
+interface SortProps {
+  sortType: SortTypeSchema;
+  setSortType: Dispatch<SetStateAction<SortTypeSchema>>;
+}
+
+export const Sort: FC<SortProps> = ({
+  sortType,
+  setSortType,
+}): ReactElement => {
   const [openSelector, setOpenSelector] = useState<boolean>(false);
-  const [activeValue, setActiveValue] = useState<number>(0);
 
-  const handleClick = (i: number): void => {
-    setActiveValue(i);
+  const handleClick = (sortType: SortTypeSchema): void => {
+    setSortType(sortType);
     setOpenSelector(!openSelector);
   };
 
@@ -24,9 +38,7 @@ export const Sort: FC = (): ReactElement => {
           className={clsx(styles.sortSelectorValue)}
           onClick={() => setOpenSelector(!openSelector)}
         >
-          {activeValue === 0 && "популярности"}
-          {activeValue === 1 && "цене"}
-          {activeValue === 2 && "алфавиту"}
+          {sortType.sortName}
         </Span>
 
         <div
@@ -35,17 +47,26 @@ export const Sort: FC = (): ReactElement => {
             openSelector && styles.sortValuesBlockActive
           )}
         >
-          {["популярности", "цене", "алфавиту"].map((value, i) => (
+          {[
+            { sortName: "популярности", sortProperty: "rating" },
+            { sortName: "цене", sortProperty: "price" },
+            { sortName: "алфавиту", sortProperty: "title" },
+          ].map((obj, i) => (
             <Span
               key={i}
               className={clsx(
                 styles.sortValuesBlockValue,
-                activeValue === i && styles.sortValuesBlockValueSelected
+                sortType.sortProperty === obj.sortProperty &&
+                  styles.sortValuesBlockValueSelected
               )}
-              color={activeValue === i ? "orange" : "light-black"}
-              onClick={() => handleClick(i)}
+              color={
+                sortType.sortProperty === obj.sortProperty
+                  ? "orange"
+                  : "light-black"
+              }
+              onClick={() => handleClick(obj)}
             >
-              {value}
+              {obj.sortName}
             </Span>
           ))}
         </div>

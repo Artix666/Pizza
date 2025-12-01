@@ -24,6 +24,9 @@
     @media (max-width: 576px) {
       font-size: 14px;
     }
+    @media (max-width: 400px) {
+      font-size: 18px;
+    }
   }
   &BtnWrap {
     display: flex;
@@ -31,7 +34,7 @@
     gap: 7px;
     padding: 7px 6px;
     margin-bottom: 17px;
-    background-color: theme.$gray;
+    background-color: theme.$light-gray;
     border-radius: 10px;
     width: 100%;
   }
@@ -78,7 +81,7 @@
       min-height: 35px;
     }
     @media (max-width: 576px) {
-      max-width: 100px;
+      max-width: 110px;
       min-height: 30px;
     }
     @media (max-width: 400px) {
@@ -86,6 +89,9 @@
       min-height: 35px;
     }
     &:hover &Text {
+      color: theme.$white;
+    }
+    &:hover &TextAdaptive {
       color: theme.$white;
     }
   }
@@ -98,6 +104,15 @@
   &AddBtnText {
     font-weight: 700;
     font-size: 16px;
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+  &AddBtnTextAdaptive {
+    display: none;
+    @media (max-width: 576px) {
+      display: flex;
+    }
   }
   &CountWrap {
     display: flex;

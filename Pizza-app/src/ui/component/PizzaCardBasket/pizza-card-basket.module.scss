@@ -1,0 +1,46 @@
+@use "../../theme/theme.scss";
+.pizzaCardBasket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid theme.$gray;
+  &InfoWrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &Title {
+    justify-content: start;
+  }
+  &Desc {
+    justify-content: start;
+  }
+  &CountBtnWrap {
+    display: flex;
+    gap: 12px;
+  }
+  &CountBtn {
+    cursor: pointer;
+  }
+  &Price {
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+  }
+  &DeleteBtn {
+    cursor: pointer;
+
+    &:hover {
+      circle {
+        fill: theme.$black;
+        stroke: theme.$black;
+        transition: all 0.3s ease;
+      }
+      path {
+        fill: theme.$white;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

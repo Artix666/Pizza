@@ -1,0 +1,70 @@
+@use "../../theme/theme.scss";
+.basketContent {
+  padding-top: 100px;
+  &Heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &HeadingIcon {
+    margin-right: 10px;
+  }
+  &Title {
+    display: flex;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 0.01em;
+  }
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  &ClearBtn {
+    justify-content: space-between;
+    max-width: 170px;
+  }
+  &ClearBtnText {
+    font-weight: 400;
+    font-size: 18px;
+  }
+  &PaymentWrap {
+    display: flex;
+    flex-direction: column;
+  }
+  &CheckWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  &CheckText {
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+    color: theme.$black;
+    b {
+      margin-left: 5px;
+    }
+    &Accent {
+      color: theme.$orange;
+    }
+  }
+  &PaymentBtnWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  &PaymentHomeLink {
+    display: flex;
+    max-width: 210px;
+    width: 100%;
+  }
+  &PaymentBtn {
+    max-width: 210px;
+    min-height: 55px;
+  }
+  &PaymentBtn:hover &PaymentBtnText {
+    color: theme.$white;
+  }
+}

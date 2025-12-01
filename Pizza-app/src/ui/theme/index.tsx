@@ -3,6 +3,7 @@ import "./index.scss";
 export type ThemeColor =
   | "orange"
   | "white"
+  | "snow-white"
   | "black"
   | "light-black"
   | "gray"
@@ -12,6 +13,7 @@ export type ThemeColor =
 export const colorCSSVars: { [k in ThemeColor]: string } = {
   orange: "var(--orange)",
   white: "var(--white)",
+  "snow-white": "var(--snow-white)",
   black: "var(--black)",
   "light-black": "var(--light-black)",
   gray: "var(--gray)",
