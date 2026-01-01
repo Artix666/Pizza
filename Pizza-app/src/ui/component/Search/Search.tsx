@@ -1,17 +1,12 @@
-import type { Dispatch, FC, ReactElement, SetStateAction } from "react";
+import { useContext, type FC, type ReactElement } from "react";
 import styles from "./search.module.scss";
 import clsx from "clsx";
 import { CrossBtnIcon, SearchIcon } from "../../icons";
+import { SearchContext } from "../../../App";
 
-interface SearchProps {
-  searchValue: string;
-  setSearchValue: Dispatch<SetStateAction<string>>;
-}
+export const Search: FC = (): ReactElement => {
+  const { searchValue, setSearchValue } = useContext(SearchContext);
 
-export const Search: FC<SearchProps> = ({
-  searchValue,
-  setSearchValue,
-}): ReactElement => {
   return (
     <div className={clsx(styles.search)}>
       <SearchIcon className={clsx(styles.searchIcon)} />

@@ -42,12 +42,12 @@ export const BasketContent = () => {
             Всего пицц:<b>3 шт.</b>
           </Span>
           <Span className={clsx(styles.basketContentCheckText)}>
-            Сумма заказа:{" "}
+            Сумма заказа:
             <b className={clsx(styles.basketContentCheckTextAccent)}>900 ₽</b>
           </Span>
         </div>
         <div className={clsx(styles.basketContentPaymentBtnWrap)}>
-          <Link to='/' className={clsx(styles.basketContentPaymentHomeLink)}>
+          <Link to="/" className={clsx(styles.basketContentPaymentHomeLink)}>
             <Button
               className={clsx(styles.basketContentPaymentBtn)}
               variant="transparent"

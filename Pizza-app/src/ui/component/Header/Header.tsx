@@ -4,20 +4,12 @@ import styles from "./header.module.scss";
 import { CartIcon } from "../../icons";
 import { Button } from "../Button";
 import { Span } from "../Span";
-import type { Dispatch, FC, ReactElement, SetStateAction } from "react";
+import type { FC, ReactElement } from "react";
 import { Container } from "../Container/Container";
 import { Link } from "react-router";
 import { Search } from "../Search";
 
-interface HeaderProps {
-  searchValue: string;
-  setSearchValue: Dispatch<SetStateAction<string>>;
-}
-
-export const Header: FC<HeaderProps> = ({
-  searchValue,
-  setSearchValue,
-}): ReactElement => {
+export const Header: FC = (): ReactElement => {
   return (
     <header className={clsx(styles.header)}>
       <Container>
@@ -31,7 +23,7 @@ export const Header: FC<HeaderProps> = ({
               height={48}
             />
           </Link>
-          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+          <Search />
           <Link className={clsx(styles.headerBasketLink)} to="/basket">
             <div className={clsx(styles.headerBtnWrap)}>
               <Button

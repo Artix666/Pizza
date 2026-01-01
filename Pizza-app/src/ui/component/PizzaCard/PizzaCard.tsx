@@ -3,7 +3,7 @@ import styles from "./pizza-card.module.scss";
 import clsx from "clsx";
 import { Span } from "../Span";
 import { Button } from "../Button";
-import type { Pizza } from "../PizzaList";
+import type { Pizza } from "../../../pages/Home";
 
 type PizzaCardProps = Pizza;
 
